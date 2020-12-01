@@ -321,6 +321,21 @@
 	</div>
 
 	<script type="text/javascript">
+		
+		//endsWith polyfill
+		if (!String.prototype.endsWith) {
+			String.prototype.endsWith = function(search, this_len) {
+				if (this_len === undefined || this_len > this.length) {
+					this_len = this.length;
+				}
+				return this.substring(this_len - search.length, this_len) === search;
+			};
+		}
+
+		//NodeList forEach polyfill
+		if (window.NodeList && !NodeList.prototype.forEach) {
+			NodeList.prototype.forEach = Array.prototype.forEach;
+		}
 
 		function settings() { //Shows and hides the settings.
 			var settings = document.getElementById("settings");
@@ -397,7 +412,7 @@
 
 		//This section determines which bosses are highlighted.
 		document.querySelectorAll(".checklist td") //Find every cell in the table.
-		.forEach(e => e.addEventListener("click", function() { //Listen for clicks for each cell.
+		.forEach(function(e) { e.addEventListener("click", function() { //Listen for clicks for each cell.
 			var boss = this.className.split("boss ")[1]; //Find boss name.
 			var matches = document.getElementsByClassName(this.className); //Find all matching cells.
 			if (!this.getAttribute("style") || this.style.backgroundImage.endsWith('dark.png")')) { //Set backgrounds according to the current background.
@@ -409,7 +424,7 @@
 					matches[cell].style.backgroundImage = "url('Assets/" + boss + "_dark.png')"; //Set as darkened.
 				}
 			}
-		}));
+		})});
 	</script>
 
 	<!-- Permanently loads and caches all the images. This prevents the images briefly flashing when being clicked as the new image loads. -->
