@@ -425,6 +425,54 @@
 				}
 			}
 		})});
+
+		//Parse and apply params
+		var queryDict = parseQueryString();
+		handleQuery(queryDict, "table");
+		handleQuery(queryDict, "theme");
+		handleQuery(queryDict, "cthulhu");
+		handleQuery(queryDict, "eaterBrain");
+		handleQuery(queryDict, "twins");
+		handleQuery(queryDict, "plantera")
+
+		function handleQuery(dict, name) {
+			if(dict[name] !== undefined) {
+				document.querySelector("#" + name + "Form input[value='" + dict[name] + "']").click();
+			}
+		}
+
+		//Change query params on settings change
+		document.querySelectorAll("#settings input").forEach(function(e) { e.addEventListener("click", function() {
+			var queries = parseQueryString();
+      		queries[this.parentNode.id.slice(0, -4)] = this.value;
+      		window.history.pushState("", "", getQueryUrl(queries));
+		})});
+
+		function getQueryUrl(queryDict) {
+			if(queryDict === undefined) {
+				queryDict = parseQueryString();
+			}
+			var url = window.location.href.split("?")[0];
+			var keys = Object.keys(queryDict);
+      		for (var i = 0; i < keys.length; i++) {
+				url += (i == 0 ? "?" : "&") + keys[i] + "=" + queryDict[keys[i]];
+      		}
+      		return url;
+		}
+
+		function parseQueryString() {
+			var queries = {};
+			var paramUrl = window.location.href.split("?")[1];
+			if(paramUrl === undefined || paramUrl.length == 0) {
+				return queries;
+			}
+			var params = paramUrl.split("&");
+			for (var i = 0; i < params.length; i++) {
+				var pair = params[i].split("=");
+				queries[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+			}
+			return queries;
+		}
 	</script>
 
 	<!-- Permanently loads and caches all the images. This prevents the images briefly flashing when being clicked as the new image loads. -->
