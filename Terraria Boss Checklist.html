@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Terraria Boss Checklist">
+	<meta name="author" content="DrYoshiyahu">
+	<title>Terraria Boss Checklist</title>
+	<link rel="shortcut icon" href="Assets/favicon.ico" />
+
+	<style type="text/css">
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+		}
+
+		button {
+			font-size: 18px;
+		}
+
+		.mono {font-family: monospace;}
+		.holding {
+			width: 300px;
+			height: 300px;
+			min-width: 300px;
+			min-height: 300px;
+			float: left;
+			margin-right: 80px;
+		}
+		.credits {
+			padding-top: 40px;
+		}
+
+		/* Nightmode styling */
+		.nightmode {
+			background-color:#222222;
+			color:#ffffff;
+		}
+		.nightmode a:link {color:#ddaaff;}
+		.nightmode a:visited {color:#ddaaff;}
+		.nightmode a:hover {color:#ffffff;}
+		.nightmode a:active {color:#ffffff;}
+
+		/* Lightmode styling */
+		.lightmode {
+			background-color:#ffffff;
+			color:#000000;
+		}
+		.lightmode a:link {color:#7700aa;}
+		.lightmode a:visited {color:#7700aa;}
+		.lightmode a:hover {color:#000000;}
+		.lightmode a:active {color:#000000;}
+
+		/* Preference setting styling */
+		.settings {
+			display: none;
+		}
+		.subsettings {
+			padding: 10px 40px 10px 0px;
+		}
+
+		/*Checklist styling */
+		.bossRow {
+			height: 72px;
+		}
+		.boss {
+			min-width: 72px;
+			min-height: 72px;
+			padding: 0px;
+		}
+
+		.eye_of_cthulhu {background-image: url(Assets/eye_of_cthulhu_dark.png);}
+		.eater_and_brain {background-image: url(Assets/eater_and_brain_dark.png);}
+		.skeletron {background-image: url(Assets/skeletron_dark.png);}
+		.king_slime {background-image: url(Assets/king_slime_dark.png);}
+		.queen_bee {background-image: url(Assets/queen_bee_dark.png);}
+		.wall_of_flesh {background-image: url(Assets/wall_of_flesh_dark.png);}
+		.the_twins {background-image: url(Assets/the_twins_dark.png);}
+		.the_destroyer {background-image: url(Assets/the_destroyer_dark.png);}
+		.skeletron_prime {background-image: url(Assets/skeletron_prime_dark.png);}
+		.queen_slime {background-image: url(Assets/queen_slime_dark.png);}
+		.empress_of_light {background-image: url(Assets/empress_of_light_dark.png);}
+		.duke_fishron {background-image: url(Assets/duke_fishron_dark.png);}
+		.plantera {background-image: url(Assets/plantera_dark.png);}
+		.golem {background-image: url(Assets/golem_dark.png);}
+		.lunatic_cultist {background-image: url(Assets/lunatic_cultist_dark.png);}
+		.moon_lord {background-image: url(Assets/moon_lord_dark.png);}
+
+	</style>
+
+</head>
+
+<body class="nightmode">
+	<table class="holding"><tr><td> <!-- This holds the positioning of the page elements. -->
+
+		<table id="all4x4" class="checklist"> <!-- All bosses; 4x4. -->
+			<tr class="bossRow">
+				<td class="boss king_slime"></td>
+				<td class="boss eye_of_cthulhu"></td>
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+				<td class="boss empress_of_light"></td>
+				<td class="boss duke_fishron"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss queen_slime"></td>
+				<td class="boss the_twins"></td>
+				<td class="boss the_destroyer"></td>
+				<td class="boss skeletron_prime"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss plantera"></td>
+				<td class="boss golem"></td>
+				<td class="boss lunatic_cultist"></td>
+				<td class="boss moon_lord"></td>
+			</tr>
+		</table>
+
+		<table id="all2x8" class="checklist" style="display: none;"> <!-- All bosses; 2x8. -->
+			<tr class="bossRow">
+				<td class="boss king_slime"></td>
+				<td class="boss eye_of_cthulhu"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss queen_slime"></td>
+				<td class="boss the_twins"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss the_destroyer"></td>
+				<td class="boss skeletron_prime"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss empress_of_light"></td>
+				<td class="boss duke_fishron"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss plantera"></td>
+				<td class="boss golem"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss lunatic_cultist"></td>
+				<td class="boss moon_lord"></td>
+			</tr>
+		</table>
+
+		<table id="all8x2" class="checklist" style="display: none;"> <!-- All bosses; 8x2. -->
+			<tr class="bossRow">
+				<td class="boss eye_of_cthulhu"></td>
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+				<td class="boss the_twins"></td>
+				<td class="boss the_destroyer"></td>
+				<td class="boss skeletron_prime"></td>
+				<td class="boss plantera"></td>
+				<td class="boss golem"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss king_slime"></td>
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+				<td class="boss queen_slime"></td>
+				<td class="boss empress_of_light"></td>
+				<td class="boss duke_fishron"></td>
+				<td class="boss lunatic_cultist"></td>
+				<td class="boss moon_lord"></td>
+			</tr>
+		</table>
+
+		<table id="all1x16" class="checklist" style="display: none;"> <!-- All bosses; 1x16. -->
+			<tr class="bossRow">
+				<td class="boss eye_of_cthulhu"></td>
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+				<td class="boss king_slime"></td>
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+				<td class="boss the_twins"></td>
+				<td class="boss the_destroyer"></td>
+				<td class="boss skeletron_prime"></td>
+				<td class="boss queen_slime"></td>
+				<td class="boss empress_of_light"></td>
+				<td class="boss duke_fishron"></td>
+				<td class="boss plantera"></td>
+				<td class="boss golem"></td>
+				<td class="boss lunatic_cultist"></td>
+				<td class="boss moon_lord"></td>
+			</tr>
+		</table>
+
+		<table id="pre2x3" class="checklist" style="display: none;"> <!-- Pre-hardmode bosses; 2x3 -->
+			<tr class="bossRow">
+				<td class="boss king_slime"></td>
+				<td class="boss eye_of_cthulhu"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+			</tr>
+		</table>
+
+		<table  id="pre3x2" class="checklist" style="display: none;"> <!-- Pre-hardmode bosses; 3x2 -->
+			<tr class="bossRow">
+				<td class="boss eye_of_cthulhu"></td>
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+			</tr>
+			<tr class="bossRow">
+				<td class="boss king_slime"></td>
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+			</tr>
+		</table>
+
+		<table id="pre1x6" class="checklist" style="display: none;"> <!-- Pre-hardmode bosses; 1x6. -->
+			<tr class="bossRow">
+				<td class="boss eye_of_cthulhu"></td>
+				<td class="boss eater_and_brain"></td>
+				<td class="boss skeletron"></td>
+				<td class="boss king_slime"></td>
+				<td class="boss queen_bee"></td>
+				<td class="boss wall_of_flesh"></td>
+			</tr>
+		</table>
+
+	</td></tr></table>
+
+	<table id="settings" class="settings"><tr><td> <!-- User options and preferences. -->
+
+		<div class="subsettings"> <!-- Table size and contents -->
+			<form id="tableForm" class="tableForm">
+				<input type="radio" name="table" value="all4x4" checked="checked"> All bosses (4x4)
+				<br>
+				<input type="radio" name="table" value="all2x8"> All bosses (2x8)
+				<br>
+				<input type="radio" name="table" value="all8x2"> All bosses (8x2)
+				<br>
+				<input type="radio" name="table" value="all1x16"> All bosses (1x16)
+				<br><br>
+				<input type="radio" name="table" value="pre2x3"> Pre-hardmode (2x3)
+				<br>
+				<input type="radio" name="table" value="pre3x2"> Pre-hardmode (3x2)
+				<br>
+				<input type="radio" name="table" value="pre1x6"> Pre-hardmode (1x6)
+			</form>
+		</div>
+
+		<div class="subsettings"> <!-- Theme preferences -->
+			<form id="themeForm" class="themeForm">
+				<input type="radio" name="theme" value="nightmode" checked="checked"> Night mode (background <span class="mono">#222222</span>)
+				<br>
+				<input type="radio" name="theme" value="lightmode"> Light mode (background <span class="mono">#ffffff</span>)
+			</form>
+		</div>
+
+	</td><td>
+
+		<div class="subsettings"> <!-- Icon preferences -->
+			<form id="cthulhuForm" class="cthulhuForm">
+				<input type="radio" name="icons" value="eye_of_cthulhu" checked="checked"> Eye of Cthulu (first form)
+				<br>
+				<input type="radio" name="icons" value="eye_of_cthulhu2"> Eye of Cthulu (second form)
+			</form>
+		</div>
+
+		<div class="subsettings"> <!-- Icon preferences -->
+			<form id="eaterBrainForm" class="eaterBrainForm">
+				<input type="radio" name="icons" value="eater_of_worlds"> Eater of Worlds
+				<br>
+				<input type="radio" name="icons" value="brain_of_cthulhu"> Brain of Cthulhu
+				<br>
+				<input type="radio" name="icons" value="eater_and_brain" checked="checked"> Both
+			</form>
+		</div>
+
+		<div class="subsettings"> <!-- Icon preferences -->
+			<form id="twinsForm" class="twinsForm">
+				<input type="radio" name="icons" value="retinazer"> Retinazer (first form)
+				<br>
+				<input type="radio" name="icons" value="retinazer2"> Retinazer (second form)
+				<br>
+				<input type="radio" name="icons" value="spazmatism"> Spazmatism (first form)
+				<br>
+				<input type="radio" name="icons" value="spazmatism2"> Spazmatism (second form)
+				<br>
+				<input type="radio" name="icons" value="the_twins" checked="checked"> The Twins (first forms)
+				<br>
+				<input type="radio" name="icons" value="the_twins2"> The Twins (second forms)
+			</form>
+		</div>
+
+		<div class="subsettings"> <!-- Icon preferences -->
+			<form id="planteraForm" class="planteraForm">
+				<input type="radio" name="icons" value="plantera" checked="checked"> Plantera (first form)
+				<br>
+				<input type="radio" name="icons" value="plantera2"> Plantera (second form)
+			</form>
+		</div>
+
+	</td></tr></table>
+
+	<div class="credits">
+		<button onclick="settings()">Settings</button><br><br>
+		Terraria Boss Checklist v1.0 by DrYoshiyahu.<br>
+		For questions, bug reports, and feedback, you can contact me on <a href="https://discord.gg/0maR10mlOHFLnZGJ">Discord</a> (DrYoshiyahu#0145), <a href="https://www.twitch.tv/dryoshiyahu">Twitch</a>, or <a href="https://twitter.com/DrYoshiyahu">Twitter</a>.
+	</div>
+
+	<script type="text/javascript">
+
+		function settings() { //Shows and hides the settings.
+			var settings = document.getElementById("settings");
+			if (settings.style.display === "block") {
+				settings.style.display = "none";
+			} else {
+				settings.style.display = "block";
+			}
+		}
+
+		//This section determines the table being displayed.
+		var tb = document.forms["tableForm"].elements["table"];
+		for (var i=0; i<tb.length; i++) {
+			tb[i].onclick = function() {
+				var tables = document.getElementsByClassName("checklist");
+				for (var t=0; t<tables.length; t++) {
+					tables[t].style.display = "none";
+				}
+				document.getElementById(this.value).style.display = "block";
+			}
+		}
+
+		//This section determines the preferences for boss icons.
+		function changePreference(matches, value) {
+			for (var cell=0; cell<matches.length; cell++) { //Iterate through all matching cells.
+				if (!matches[cell].style.backgroundImage || matches[cell].style.backgroundImage.endsWith('dark.png")')) { //Set background image.
+					matches[cell].style.backgroundImage = "url('Assets/" + value + "_dark.png')";
+				} else {
+					matches[cell].style.backgroundImage = "url('Assets/" + value + ".png')";
+				}
+				matches[cell].className = "boss " + value; //Change class name.
+			}
+		}
+
+		var cth = document.forms["cthulhuForm"].elements["icons"]; //Eye of Cthulhu Variants
+		for (var a=0; a<cth.length; a++) {
+			cth[a].onclick = function() {
+				var matches = document.querySelectorAll(".eye_of_cthulhu, .eye_of_cthulhu2"); //Find all matching cells.
+				changePreference(matches, this.value);
+			}
+		}
+
+		var eab = document.forms["eaterBrainForm"].elements["icons"]; //Eater of Worlds/Brain of Cthulhu Variants
+		for (var b=0; b<eab.length; b++) {
+			eab[b].onclick = function() {
+				var matches = document.querySelectorAll(".eater_and_brain, .eater_of_worlds, .brain_of_cthulhu"); //Find all matching cells.
+				changePreference(matches, this.value);
+			}
+		}
+
+		var twn = document.forms["twinsForm"].elements["icons"]; //The Twins Variants
+		for (var c=0; c<twn.length; c++) {
+			twn[c].onclick = function() {
+				var matches = document.querySelectorAll(".the_twins, .the_twins2, .retinazer, .retinazer2, .spazmatism, .spazmatism2"); //Find all matching cells.
+				changePreference(matches, this.value);
+			}
+		}
+
+		var plt = document.forms["planteraForm"].elements["icons"]; //Plantera Variants
+		for (var d=0; d<plt.length; d++) {
+			plt[d].onclick = function() {
+				var matches = document.querySelectorAll(".plantera, .plantera2"); //Find all matching cells.
+				changePreference(matches, this.value);
+			}
+		}
+
+		//This section determines the selected theme.
+		var bg = document.forms["themeForm"].elements["theme"];
+		for (var j=0; j<bg.length; j++) {
+			bg[j].onclick = function() {
+				document.body.className = this.value;
+			}
+		}
+
+		//This section determines which bosses are highlighted.
+		document.querySelectorAll(".checklist td") //Find every cell in the table.
+		.forEach(e => e.addEventListener("click", function() { //Listen for clicks for each cell.
+			var boss = this.className.split("boss ")[1]; //Find boss name.
+			var matches = document.getElementsByClassName(this.className); //Find all matching cells.
+			if (!this.getAttribute("style") || this.style.backgroundImage.endsWith('dark.png")')) { //Set backgrounds according to the current background.
+				for (var cell=0; cell<matches.length; cell++) {
+					matches[cell].style.backgroundImage = "url('Assets/" + boss + ".png')"; //Set as highlighted.
+				}
+			} else {
+				for (var cell=0; cell<matches.length; cell++) {
+					matches[cell].style.backgroundImage = "url('Assets/" + boss + "_dark.png')"; //Set as darkened.
+				}
+			}
+		}));
+	</script>
+
+	<!-- Permanently loads and caches all the images. This prevents the images briefly flashing when being clicked as the new image loads. -->
+
+	<p style="display: inline; background-image: url(Assets/eye_of_cthulhu.png);"></p>
+	<p style="display: inline; background-image: url(Assets/eye_of_cthulhu2.png);"></p>
+	<p style="display: inline; background-image: url(Assets/eye_of_cthulhu_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/eye_of_cthulhu2_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/eater_of_worlds.png);"></p>
+	<p style="display: inline; background-image: url(Assets/brain_of_cthulhu.png);"></p>
+	<p style="display: inline; background-image: url(Assets/eater_and_brain.png);"></p>
+	<p style="display: inline; background-image: url(Assets/eater_of_worlds_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/brain_of_cthulhu_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/eater_and_brain_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/skeletron.png);"></p>
+	<p style="display: inline; background-image: url(Assets/skeletron_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/king_slime.png);"></p>
+	<p style="display: inline; background-image: url(Assets/king_slime_dark.png);"></p>
+	
+	<p style="display: inline; background-image: url(Assets/queen_bee.png);"></p>
+	<p style="display: inline; background-image: url(Assets/queen_bee_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/wall_of_flesh.png);"></p>
+	<p style="display: inline; background-image: url(Assets/wall_of_flesh_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/retinazer.png);"></p>
+	<p style="display: inline; background-image: url(Assets/retinazer2.png);"></p>
+	<p style="display: inline; background-image: url(Assets/spazmatism.png);"></p>
+	<p style="display: inline; background-image: url(Assets/spazmatism2.png);"></p>
+	<p style="display: inline; background-image: url(Assets/the_twins.png);"></p>
+	<p style="display: inline; background-image: url(Assets/the_twins2.png);"></p>
+	<p style="display: inline; background-image: url(Assets/retinazer_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/retinazer2_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/spazmatism_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/spazmatism2_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/the_twins_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/the_twins2_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/the_destroyer.png);"></p>
+	<p style="display: inline; background-image: url(Assets/the_destroyer_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/skeletron_prime.png);"></p>
+	<p style="display: inline; background-image: url(Assets/skeletron_prime_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/queen_slime.png);"></p>
+	<p style="display: inline; background-image: url(Assets/queen_slime_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/empress_of_light.png);"></p>
+	<p style="display: inline; background-image: url(Assets/empress_of_light_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/duke_fishron.png);"></p>
+	<p style="display: inline; background-image: url(Assets/duke_fishron_dark.png);"></p>
+	
+	<p style="display: inline; background-image: url(Assets/plantera.png);"></p>
+	<p style="display: inline; background-image: url(Assets/plantera2.png);"></p>
+	<p style="display: inline; background-image: url(Assets/plantera_dark.png);"></p>
+	<p style="display: inline; background-image: url(Assets/plantera2_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/golem.png);"></p>
+	<p style="display: inline; background-image: url(Assets/golem_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/lunatic_cultist.png);"></p>
+	<p style="display: inline; background-image: url(Assets/lunatic_cultist_dark.png);"></p>
+
+	<p style="display: inline; background-image: url(Assets/moon_lord.png);"></p>
+	<p style="display: inline; background-image: url(Assets/moon_lord_dark.png);"></p>
+
+</body>
