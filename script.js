@@ -42,6 +42,26 @@ if (!document.querySelector) {
 	};
 }
 
+//addEventListener polyfill
+window.addEvent = function(obj, type, fn) {
+	if (obj.addEventListener) {
+		obj.addEventListener(type, fn, false);
+	} else if (obj.attachEvent) {
+		obj["e" + type + fn] = fn;
+		obj[type + fn] = function() {
+			var e = window.event;
+			e.currentTarget = obj;
+			e.preventDefault = function() { e.returnValue = false; };
+			e.stopPropagation = function() { e.cancelBubble = true; };
+			e.target = e.srcElement;
+			e.timeStamp = Date.now();
+			obj["e" + type + fn].call(this, e);
+		};
+		obj.attachEvent("on" + type, obj[type + fn]);
+	}
+};
+
+//forEach polyfill
 if (!Array.prototype['forEach']) {
 	Array.prototype.forEach = function(callback, thisArg) {
 		if (this == null) { throw new TypeError('Array.prototype.forEach called on null or undefined'); }
