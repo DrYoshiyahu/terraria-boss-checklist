@@ -1,0 +1,80 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+button {
+	font-size: 18px;
+}
+
+.mono {
+	font-family: monospace;
+}
+
+.holding {
+	width: 300px;
+	height: 300px;
+	min-width: 300px;
+	min-height: 300px;
+	float: left;
+	margin-right: 80px;
+}
+
+.credits {
+	padding-top: 40px;
+}
+
+/* Nightmode styling */
+.nightmode {
+	background-color:#222222;
+	color:#ffffff;
+}
+.nightmode a:link {color:#ddaaff;}
+.nightmode a:visited {color:#ddaaff;}
+.nightmode a:hover {color:#ffffff;}
+.nightmode a:active {color:#ffffff;}
+
+/* Lightmode styling */
+.lightmode {
+	background-color:#ffffff;
+	color:#000000;
+}
+.lightmode a:link {color:#7700aa;}
+.lightmode a:visited {color:#7700aa;}
+.lightmode a:hover {color:#000000;}
+.lightmode a:active {color:#000000;}
+
+/* Preference setting styling */
+.settings {
+	display: none;
+}
+.subsettings {
+	padding: 10px 40px 10px 0px;
+}
+
+/*Checklist styling */
+.bossRow {
+	height: 72px;
+}
+.boss {
+	min-width: 72px;
+	min-height: 72px;
+	padding: 0px;
+}
+
+.eye_of_cthulhu {background-image: url(Assets/eye_of_cthulhu_dark.png);}
+.eater_and_brain {background-image: url(Assets/eater_and_brain_dark.png);}
+.skeletron {background-image: url(Assets/skeletron_dark.png);}
+.king_slime {background-image: url(Assets/king_slime_dark.png);}
+.queen_bee {background-image: url(Assets/queen_bee_dark.png);}
+.wall_of_flesh {background-image: url(Assets/wall_of_flesh_dark.png);}
+.the_twins {background-image: url(Assets/the_twins_dark.png);}
+.the_destroyer {background-image: url(Assets/the_destroyer_dark.png);}
+.skeletron_prime {background-image: url(Assets/skeletron_prime_dark.png);}
+.queen_slime {background-image: url(Assets/queen_slime_dark.png);}
+.empress_of_light {background-image: url(Assets/empress_of_light_dark.png);}
+.duke_fishron {background-image: url(Assets/duke_fishron_dark.png);}
+.plantera {background-image: url(Assets/plantera_dark.png);}
+.golem {background-image: url(Assets/golem_dark.png);}
+.lunatic_cultist {background-image: url(Assets/lunatic_cultist_dark.png);}
+.moon_lord {background-image: url(Assets/moon_lord_dark.png);}
