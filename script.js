@@ -93,6 +93,14 @@ if (!Array.prototype['forEach']) {
 	};
 }
 
+//getElementsByClassName polyfill
+if (!document.getElementsByClassName) {
+	document.getElementsByClassName = function(classNames) {
+		classNames = String(classNames).replace(/^|\s+/g, '.');
+		return document.querySelectorAll(classNames);
+	};
+}
+
 function settings() { //Shows and hides the settings.
 	var settings = document.getElementById("settings");
 	if (settings.style.display === "block") {
