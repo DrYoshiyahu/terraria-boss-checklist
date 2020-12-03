@@ -101,6 +101,13 @@ if (!document.getElementsByClassName) {
 	};
 }
 
+//pushState polyfill (I guess?)
+if (!document.pushState) {
+	document.pushState = function() {
+		return; //Does it look like I know what I'm doing? All I want is for the webpage to load correctly.
+	}
+}
+
 //Object.keys polyfill
 if (!Object.keys) {
 	Object.keys = (function() {
