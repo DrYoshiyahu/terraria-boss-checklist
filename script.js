@@ -102,9 +102,9 @@ if (!document.getElementsByClassName) {
 }
 
 //pushState polyfill (I guess?)
-if (!document.pushState) {
-	document.pushState = function() {
-		return; //Does it look like I know what I'm doing? All I want is for the webpage to load correctly.
+if (!window.history.pushState) {
+	window.history.pushState = function() {
+		return; //Why does LiveSplit use such an absurdly outdated internet browser? Why are there so many polyfills? Someone save me from this nightmare. Please just make it stop.
 	}
 }
 
